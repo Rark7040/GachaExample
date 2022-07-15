@@ -25,6 +25,7 @@ class PMGachaItem implements IGachaItem{
 	}
 
 	public function giveItem(Player $player):void{
+		$player->sendMessage('['.$this->getRarity()->getName().'] '.$this->item->getName());
 		$player->getInventory()->addItem(clone $this->item);
 	}
 }
