@@ -7,6 +7,6 @@ use pocketmine\plugin\PluginBase;
 
 class GachaExample extends PluginBase{
 	protected function onEnable():void{
-
+		$this->getServer()->getCommandMap()->register($this->getName(), new GachaCommand());
 	}
 }
