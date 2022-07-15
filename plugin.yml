@@ -1,0 +1,10 @@
+name: GachaExample
+author: RarkHopper
+api: 4.0.0
+load: STARTUP
+version: 1.0.0
+main: rarkhopper\gacha_example\GachaExample
+permissions:
+  gacha_example.command.public:
+    description: "except for operator, can't use command"
+    default: true # can also be false, or op
