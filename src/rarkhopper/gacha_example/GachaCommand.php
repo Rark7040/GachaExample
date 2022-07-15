@@ -7,6 +7,7 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 use rarkhopper\gacha\Gacha;
+use rarkhopper\gacha\RandomItemTable;
 
 
 class GachaCommand extends Command{
@@ -19,6 +20,12 @@ class GachaCommand extends Command{
 	}
 
 	protected function createGacha():Gacha{
+		return new Gacha(
+			'TestGacha',
+			'example',
+			new RandomItemTable(),
+			new ExampleTicket
+		);
 	}
 
 	public function execute(CommandSender $sender, string $commandLabel, array $args){
