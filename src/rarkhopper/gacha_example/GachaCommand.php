@@ -39,6 +39,15 @@ class GachaCommand extends Command{
 	public function execute(CommandSender $sender, string $commandLabel, array $args){
 		if(!$this->testPermission($sender)) return;
 		if(!$sender instanceof Player) return;
+		$cnt = 1;
 
+		if(isset($args[0])){
+			$cnt_order = $args[0];
+
+			if(is_int($cnt_order) and $cnt_order > 0){
+				$cnt = $cnt_order;
+			}
+		}
+		$this->gacha->roll($sender, $cnt);
 	}
 }
