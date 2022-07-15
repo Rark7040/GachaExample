@@ -4,6 +4,8 @@ api: 4.0.0
 load: STARTUP
 version: 1.0.0
 main: rarkhopper\gacha_example\GachaExample
+virions:
+  - Gacha
 permissions:
   gacha_example.command.public:
     description: "except for operator, can't use command"
