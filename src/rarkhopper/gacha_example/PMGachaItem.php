@@ -5,6 +5,7 @@ namespace rarkhopper\gacha_example;
 
 use pocketmine\item\Item;
 use pocketmine\player\Player;
+use pocketmine\world\sound\PopSound;
 use rarkhopper\gacha\IGachaItem;
 use rarkhopper\gacha\IRarity;
 use rarkhopper\gacha\Rarity;
@@ -27,5 +28,7 @@ class PMGachaItem implements IGachaItem{
 	public function giveItem(Player $player):void{
 		$player->sendMessage('['.$this->getRarity()->getName().'] '.$this->item->getName());
 		$player->getInventory()->addItem(clone $this->item);
+		$world = $player->getWorld();
+		$world->addSound($player->getPosition(), new PopSound());
 	}
 }
