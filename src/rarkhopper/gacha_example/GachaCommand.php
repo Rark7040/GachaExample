@@ -7,6 +7,7 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\item\VanillaItems;
 use pocketmine\player\Player;
+use pocketmine\utils\TextFormat;
 use rarkhopper\gacha\Gacha;
 use rarkhopper\gacha\RandomItemTable;
 use rarkhopper\gacha\Rarity;
@@ -42,12 +43,12 @@ class GachaCommand extends Command{
 		$cnt = 1;
 
 		if(isset($args[0])){
-			$cnt_order = $args[0];
+			$cnt_order = (int) $args[0];
 
-			if(is_int($cnt_order) and $cnt_order > 0){
+			if($cnt_order > 0){
 				$cnt = $cnt_order;
 			}
 		}
-		$this->gacha->roll($sender, $cnt);
+		$this->gacha->roll($sender, TextFormat::RED.'チケットが足りません', $cnt);
 	}
 }

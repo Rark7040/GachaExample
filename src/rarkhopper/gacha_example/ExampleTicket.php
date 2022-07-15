@@ -13,6 +13,6 @@ class ExampleTicket implements ITicket{
 	}
 
 	public function consume(Player $player, int $count):void{
-		$player->getInventory()->remove(VanillaItems::GOLD_NUGGET()->setCount($count));
+		$player->getInventory()->removeItem(VanillaItems::GOLD_NUGGET()->setCount($count));
 	}
 }
